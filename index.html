@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>المنصة الخيرية - متابعة السجلات المالية وإحصاء المبالغ المالية</title>
+    <title>منصة الشفافية والمتابعة المالية - الجمعية الخيرية</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
     <style>
@@ -48,10 +48,10 @@
                 </div>
                 <div>
                     <div class="flex items-center gap-2.5 flex-wrap">
-                        <h1 class="text-xl sm:text-2xl font-black tracking-tight text-white">المنصة الخيرية</h1>
+                        <h1 class="text-xl sm:text-2xl font-black tracking-tight text-white">منصة الشفافية والتبرعات الخيرية</h1>
                         <span id="connectionStatus" class="text-[11px] bg-emerald-400/15 text-emerald-200 border border-emerald-300/30 px-3 py-0.5 rounded-full font-bold pulse-live">جاري الاتصال...</span>
                     </div>
-                    <p class="text-xs text-emerald-200/85 font-medium mt-0.5">متابعة السجلات المالية وإحصاء المبالغ المالية</p>
+                    <p class="text-xs text-emerald-200/85 font-medium mt-0.5">متابعة مالية فورية وموثقة بين السعودية والسودان</p>
                 </div>
             </div>
 
@@ -75,6 +75,55 @@
 
     <!-- Main Container -->
     <main class="max-w-7xl mx-auto px-4 py-8 space-y-8">
+
+        <!-- Hero Banner / Trust Strip -->
+        <section class="glass-card rounded-3xl border border-emerald-900/10 shadow-lg shadow-emerald-950/5 p-6 sm:p-7 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 print-shadow-none">
+            <div class="space-y-1.5 max-w-2xl">
+                <span class="inline-flex items-center gap-1.5 text-xs font-extrabold bg-emerald-100 text-emerald-900 px-3 py-1 rounded-full">
+                    <span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+                    شفافية مالية لحظية
+                </span>
+                <h2 class="text-xl sm:text-2xl font-black text-slate-900">كل ريال وجنيه يُوثق بدقة في سجل مفتوح ومباشر</h2>
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    تُحدّث الأرصدة والعمليات المعتمدة تلقائياً عبر السحابة لضمان وضوح المساهمات والمصروفات الميدانية أمام الجميع.
+                </p>
+            </div>
+            <div class="flex flex-wrap items-center gap-3 w-full md:w-auto justify-end no-print">
+                <button type="button" onclick="window.print()" class="bg-slate-900 hover:bg-slate-800 text-white px-5 py-3 rounded-2xl font-bold transition-all shadow-md flex items-center gap-2 text-sm cursor-pointer">
+                    <svg class="w-4 h-4 text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+                    </svg>
+                    طباعة فورية / PDF
+                </button>
+            </div>
+        </section>
+
+        <!-- KPI Summary Cards -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <!-- Card 1: Total Donations SAR -->
+            <div class="glass-card p-6 rounded-3xl shadow-md shadow-slate-200/60 border border-emerald-100 hover:border-emerald-300 hover:-translate-y-1 transition-all duration-200 print-shadow-none">
+                <div class="flex items-center justify-between mb-4">
+                    <span class="text-xs font-extrabold text-slate-500">إجمالي التبرعات (السعودية)</span>
+                    <span class="bg-gradient-to-br from-emerald-500 to-teal-600 text-white text-xs font-black px-3 py-1.5 rounded-xl shadow-sm">ر.س</span>
+                </div>
+                <h3 id="totalDonationsSAR" class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">0 ر.س</h3>
+                <div class="mt-3 h-1.5 w-full bg-emerald-100 rounded-full overflow-hidden">
+                    <div class="h-full w-3/4 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full"></div>
+                </div>
+            </div>
+
+            <!-- Card 2: Net Sudan Fund SDG -->
+            <div class="glass-card p-6 rounded-3xl shadow-md shadow-slate-200/60 border border-purple-100 hover:border-purple-300 hover:-translate-y-1 transition-all duration-200 print-shadow-none">
+                <div class="flex items-center justify-between mb-4">
+                    <span class="text-xs font-extrabold text-slate-500">صافي صندوق السودان (جنيه)</span>
+                    <span class="bg-gradient-to-br from-purple-500 to-indigo-600 text-white text-xs font-black px-3 py-1.5 rounded-xl shadow-sm">السودان</span>
+                </div>
+                <h3 id="totalSudanSDG" class="text-2xl sm:text-3xl font-black text-purple-700 tracking-tight">0 ج.س</h3>
+                <div class="mt-3 h-1.5 w-full bg-purple-100 rounded-full overflow-hidden">
+                    <div class="h-full w-4/5 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full"></div>
+                </div>
+            </div>
+        </section>
 
         <!-- Public Records Table Section -->
         <section class="glass-card rounded-3xl shadow-lg shadow-slate-200/60 border border-slate-200/80 overflow-hidden print-shadow-none">
@@ -118,7 +167,7 @@
 
     <!-- Footer -->
     <footer class="max-w-7xl mx-auto px-4 pb-8 pt-2 text-center text-xs text-slate-500 no-print">
-        <p>المنصة الخيرية — متابعة السجلات المالية وإحصاء المبالغ المالية</p>
+        <p>منصة الشفافية والمتابعة المالية — تحديث مباشر وموثق للعمليات الخيرية</p>
     </footer>
 
     <!-- Modal: Donor Form -->
@@ -212,18 +261,6 @@
 
             <!-- Admin Panel View -->
             <div id="adminDashboardView" class="hidden flex-1 overflow-y-auto p-6 space-y-6">
-
-                <!-- Approved Balances Summary Inside Admin Panel Only -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div class="bg-emerald-50/70 p-4 rounded-2xl border border-emerald-200/80">
-                        <span class="text-xs font-extrabold text-emerald-900 block mb-1">إجمالي التبرعات المعتمدة (السعودية)</span>
-                        <h4 id="totalDonationsSAR" class="text-2xl font-black text-slate-900">0 ر.س</h4>
-                    </div>
-                    <div class="bg-purple-50/70 p-4 rounded-2xl border border-purple-200/80">
-                        <span class="text-xs font-extrabold text-purple-900 block mb-1">صافي صندوق السودان المعتمد (جنيه)</span>
-                        <h4 id="totalSudanSDG" class="text-2xl font-black text-purple-700">0 ج.س</h4>
-                    </div>
-                </div>
                 
                 <div class="bg-slate-100/90 p-4 rounded-2xl flex flex-wrap justify-between items-center gap-4 border border-slate-200/80">
                     <div class="flex flex-wrap items-center gap-4">
